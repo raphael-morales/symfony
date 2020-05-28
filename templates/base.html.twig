@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        {{ encore_entry_link_tags('app') }}
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
@@ -13,5 +14,6 @@
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        {{ encore_entry_script_tags('app') }}
     </body>
 </html>
