@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Controller\CategoryType;
+use Symfony\Component\HttpFoundation\Request;
 
 class WildController extends AbstractController
 {
@@ -14,8 +16,14 @@ class WildController extends AbstractController
      */
     public function index() :Response
     {
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
+
+
         return $this->render('wild/index.html.twig', [
                 'website' => 'Wild Séries',
+                'programs' => $form,
+                'form' => $form->createView(),
         ]);
     }
 

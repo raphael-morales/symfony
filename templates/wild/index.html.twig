@@ -6,6 +6,10 @@
 
 {% block body %}
     <h1>Bienvenue sur {{ website }}</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    <button type="submit" name="btnSearch">Rechercher</button>
+    {{ form_end(form) }}
 {% endblock %}
 
 {% block javascripts %}
