@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use function Sodium\add;
+use App\controller\OptionsResolver;
 
 class CategoryType extends AbstractType
 {
