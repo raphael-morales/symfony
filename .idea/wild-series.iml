@@ -113,5 +113,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="atelier-poo3" />
+    <orderEntry type="module" module-name="atelier-poo-2" />
+    <orderEntry type="module" module-name="lyon-php-2003-project3-trouvetonboard" />
+    <orderEntry type="module" module-name="workshop-php-symfony-services-flyaround" />
   </component>
 </module>

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/atelier-poo-2/.idea/atelier-poo-2.iml" filepath="$USER_HOME$/atelier-poo-2/.idea/atelier-poo-2.iml" />
+      <module fileurl="file://$USER_HOME$/atelier-poo3/.idea/atelier-poo3.iml" filepath="$USER_HOME$/atelier-poo3/.idea/atelier-poo3.iml" />
+      <module fileurl="file://$USER_HOME$/lyon-php-2003-project3-trouvetonboard/.idea/lyon-php-2003-project3-trouvetonboard.iml" filepath="$USER_HOME$/lyon-php-2003-project3-trouvetonboard/.idea/lyon-php-2003-project3-trouvetonboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/wild-series.iml" filepath="$PROJECT_DIR$/.idea/wild-series.iml" />
+      <module fileurl="file://$USER_HOME$/atelier/workshop-php-symfony-services-flyaround/.idea/workshop-php-symfony-services-flyaround.iml" filepath="$USER_HOME$/atelier/workshop-php-symfony-services-flyaround/.idea/workshop-php-symfony-services-flyaround.iml" />
     </modules>
   </component>
 </project>
