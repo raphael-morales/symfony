@@ -9,9 +9,10 @@
             <p>Catégorie : {{ program.category.name }}</p>
                 <ul>
             {% for season in seasons %}
-                    <a href="{{ path('wild_episode' , { 'programName' : program.title , 'id' : season.id }) }}"><li>Season : {{ season.number }}</li></a> <br> {{ season.description }}
+                    <a href="{{ path('wild_season' , { 'programName' : program.title , 'id' : season.id }) }}"><li>Season : {{ season.number }}</li></a> <br> {{ season.description }}
             {% endfor %}
                 </ul>
+            <a href="{{ path('wild_index') }}">back programs</a>
         </div>
     </div>
 {% endblock %}

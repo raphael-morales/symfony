@@ -124,7 +124,7 @@ class WildController extends AbstractController
     /**
      * @param int $id
      * @param string $programName
-     * @Route ("wild/{programName}/{id}", name="wild_episode")
+     * @Route ("wild/{programName}/{id}", name="wild_season")
      * @return Response
      */
     public function showBySeason(int $id, string $programName) :Response
@@ -134,10 +134,6 @@ class WildController extends AbstractController
             ' ', ucwords(trim(strip_tags($programName)), "-")
         );
 
-//        $program = $this->getDoctrine()
-//            ->getRepository(Program::class)
-//            ->findOneBy(['title' => $programName]);
-
         $season = $this->getDoctrine()
             ->getRepository(Season::class)
             ->findOneBy(['id' => $id]);
@@ -145,15 +141,25 @@ class WildController extends AbstractController
         $program = $season->getProgram();
         $episodes = $season->getEpisodes();
 
-
-//        $episodes = $this->getDoctrine()
-//            ->getRepository(Episode::class)
-//            ->findBy(['season' => $season]);
-
-        return $this->render('wild/episode.html.twig', ['episode' => $episodes,
+        return $this->render('wild/season.html.twig', ['episodes' => $episodes,
             'program' => $program,
             'season' => $season
         ]);
+    }
+
+    /**
+     * @param Episode $episode
+     * @Route ("wild/{programName}/{season}/episode/{episode}", name="wild_episode")
+     * @return Response
+     */
+    public function showEpisode(Episode $episode) :Response
+    {
+        $season = $episode->getSeason();
+        $program = $season->getProgram();
+
+        return $this->render('wild/episode.html.twig', ['episode'=> $episode,
+                                                        'program' => $program,
+                                                        'season' => $season]);
     }
 
 }
