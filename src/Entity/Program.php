@@ -6,9 +6,13 @@ use App\Repository\ProgramRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
+ * @UniqueEntity(fields={"title"},
+ *     message="Le titre du programme est déjà utilisé")
  */
 class Program
 {
@@ -21,11 +25,17 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max="255", maxMessage="Le programme saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank(message="A title is required")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="A summary is required")
+     * @Assert\Regex(pattern="/^.plus.belle.la.vie/i",
+     *     match=true,
+     *     message="On parle de vraies séries ici")
      */
     private $summary;
 
