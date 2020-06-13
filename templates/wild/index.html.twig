@@ -12,7 +12,10 @@
     {% else %}
         Aucune série trouvée.
     {% endfor %}
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
+    <ul>
+        <li><a href="{{ path('program_index') }}">Modify programs</a></li>
+        <li><a href="{{ path('season_index') }}">Modify seasons</a></li>
+        <li><a href="{{ path('episode_index') }}">Modify episodes</a></li>
+        <li><a href="{{ path('app_index') }}">Retour à l'accueil</a></li>
+    </ul>
 {% endblock %}

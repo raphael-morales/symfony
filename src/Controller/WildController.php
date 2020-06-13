@@ -12,11 +12,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\CategoryType;
 use Symfony\Component\HttpFoundation\Request;
 
+
+/**
+ * @Route("/wild")
+ */
 class WildController extends AbstractController
 {
 
     /**
-     * @Route("/wild", name="wild_index")
+     * @Route("/", name="wild_index")
      */
     public function index() :Response
     {
@@ -68,7 +72,7 @@ class WildController extends AbstractController
     }
 
     /**
-     * @Route("/wild/show", name="wild_noshow")
+     * @Route("/show", name="wild_noshow")
      */
     public function noShow() :Response
     {
@@ -77,7 +81,7 @@ class WildController extends AbstractController
 
     /**
      * @param string $categoryName
-     * @Route ("wild/category/{categoryName}", name="show_category")
+     * @Route ("/category/{categoryName}", name="show_category")
      */
     public function showByCategory(string $categoryName) :Response
     {
@@ -98,7 +102,7 @@ class WildController extends AbstractController
 
     /**
      * @param string $programName
-     * @Route ("wild/{programName}", name="show_program")
+     * @Route ("/{programName}", name="show_program")
      */
     public function showByProgram(string $programName) :Response
     {
@@ -124,7 +128,7 @@ class WildController extends AbstractController
     /**
      * @param int $id
      * @param string $programName
-     * @Route ("wild/{programName}/{id}", name="wild_season")
+     * @Route ("/{programName}/{id}", name="wild_season")
      * @return Response
      */
     public function showBySeason(int $id, string $programName) :Response
@@ -149,7 +153,7 @@ class WildController extends AbstractController
 
     /**
      * @param Episode $episode
-     * @Route ("wild/{programName}/{season}/episode/{episode}", name="wild_episode")
+     * @Route ("/{programName}/{season}/episode/{episode}", name="wild_episode")
      * @return Response
      */
     public function showEpisode(Episode $episode) :Response
